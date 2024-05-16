@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 public class App {
     private static int min(int r, int i) {
-        return r<i?r:i;
+        return (r<i) ? r : i ;
     }
     public static void main(String[] args) throws Exception {
         solution_On();
     }
 
-    public static void solutionN_N() throws FileNotFoundException
-    {
+    public static void solutionN_N() throws FileNotFoundException{
         File f = new File("almacenamiento.in");
         Scanner s = new Scanner(f);
         String l1 = s.nextLine();
@@ -64,7 +63,8 @@ public class App {
      * J es persistente entre distintas operaciones, no se resetea.
      * Su total no va a multiplicarse.
      */
-    {//Carga de datos
+    {
+        //Carga de datos
         File f = new File("almacenamiento.in");
         Scanner s1 = new Scanner(f);
         String l1 = s1.nextLine();
@@ -102,7 +102,7 @@ public class App {
 
     public static void solution_O_n_Log_n()
     {
-        
+        //sin implementar aun
 
     }
 }
