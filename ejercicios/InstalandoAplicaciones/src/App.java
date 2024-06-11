@@ -99,9 +99,4 @@ public class App {
         System.err.println(r);
     }
 
-
-    public static void solution_O_n_Log_n()
-    {
-        
-    }
 }

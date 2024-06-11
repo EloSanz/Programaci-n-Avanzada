@@ -1,16 +1,19 @@
-public class GrafoNoDirigido {
+
+public class GrafoDirigido {
     private int[][] matrizAdyacencia;
     private int numVertices;
 
-    public GrafoNoDirigido(int numVertices) {
+    public GrafoDirigido(int numVertices) {
         this.numVertices = numVertices;
         matrizAdyacencia = new int[numVertices][numVertices];
     }
 
+    // Método para agregar una arista dirigida
     public void agregarArista(int origen, int destino, int peso) {
         matrizAdyacencia[origen][destino] = peso;
-        matrizAdyacencia[destino][origen] = peso; 
     }
+
+    // Método para mostrar la matriz de adyacencia
     public void mostrarMatrizAdyacencia() {
         System.out.println("Matriz de Adyacencia:");
         System.out.print("    "); // Espacio inicial para la columna de índices
@@ -27,8 +30,9 @@ public class GrafoNoDirigido {
             System.out.println();
         }
     }
+
     public static void main(String[] args) {
-        GrafoNoDirigido grafo = new GrafoNoDirigido(5);
+        GrafoDirigido grafo = new GrafoDirigido(5);
 
         grafo.agregarArista(0, 1, 10);
         grafo.agregarArista(0, 4, 100);
@@ -39,5 +43,4 @@ public class GrafoNoDirigido {
         // Mostrar la matriz de adyacencia
         grafo.mostrarMatrizAdyacencia();
     }
-
 }
