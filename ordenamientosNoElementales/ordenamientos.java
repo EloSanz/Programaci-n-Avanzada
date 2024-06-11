@@ -37,41 +37,55 @@ public class ordenamientos {
         }
     }
     
+  
     public class QuickSort {
-    private static void _qSort(int[] vec, int ini, int fin){
-        if(ini > fin)
-            return;
-        int izq = ini, der = fin;
-        int p =vec[(izq+der) / 2];
-        do
-        {
-            while (vec[izq] < p)
-                izq++;
-            while (vec[der] > p)
-                der--;
-            if(izq <= der)
-            {
-                //swap(&);
-                izq++;
-                der--;
+        private static void swap(int[] vec, int i, int j) {
+            int temp = vec[i];
+            vec[i] = vec[j];
+            vec[j] = temp;
+        }
+    
+        private static void _qSort(int[] vec, int ini, int fin) {
+            if (ini >= fin) {
+                return;
             }
-        } while (izq <= der);
-        if(izq <= fin) 
-            _qSort(vec, izq, fin);
-        if(der >= ini) 
-            _qSort(vec, ini, der);
-    }
-    public static void qSort(int[] vec){
-        _qSort(vec, 0, vec.length);
-    }
-        
+    
+            int izq = ini, der = fin;
+            int p = vec[(izq + der) / 2];
+    
+            do {
+                while (vec[izq] < p) izq++;
+                while (vec[der] > p) der--;
+                if (izq <= der) {
+                    swap(vec, izq, der);
+                    izq++;
+                    der--;
+                }
+            } while (izq <= der);
+    
+            if (ini < der) {
+                _qSort(vec, ini, der);
+            }
+            if (izq < fin) {
+                _qSort(vec, izq, fin);
+            }
+        }
+    
+        public static void qSort(int[] vec) {
+            if (vec == null || vec.length == 0) {
+                return;
+            }
+            _qSort(vec, 0, vec.length - 1);
+        }
     }
     public static void main(String [] args)
     {
         int[] vec = {1,2,3,6,5,8,9,4,7,32,11,10};
-        Merge.mergeSort(vec);
+        QuickSort.qSort(vec);
+
         for(int i = 0; i < vec.length; i++)
-        System.err.print(vec[i] +" ");
+            System.err.print(vec[i] +" ");
     }
 
+    
 }
