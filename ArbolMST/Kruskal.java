@@ -1,4 +1,3 @@
-import ArbolMST.Arista;
 import java.util.ArrayList;
 import java.util.Collections;
 

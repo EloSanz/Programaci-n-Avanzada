@@ -1,4 +1,3 @@
-package ArbolMST;
 public class Arista implements Comparable<Arista> {
 	public final int inicio, fin, costo;
 	

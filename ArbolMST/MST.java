@@ -1,4 +1,4 @@
-package ArbolMST;
+
 public class MST {
 	private int costo;
 	private int[][] grafo;

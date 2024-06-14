@@ -1,4 +1,4 @@
-package ArbolMST;
+
 import java.util.HashSet;
 import java.util.PriorityQueue;
 
